@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Image Display</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <img id="displayImage" src="" alt="Random Image">
+  <script>
+    // Function to randomly select an image based on probabilities
+    function selectImage() {
+      const random = Math.random();
+      let imageSrc;
+      if (random < 0.4) {
+        imageSrc = 'good.png'; // 40% chance
+      } else {
+        imageSrc = 'bad.png'; // 60% chance
+      }
+      document.getElementById('displayImage').src = imageSrc;
+    }
+
+    // Call the function when the page loads
+    window.onload = selectImage;
+  </script>
+</body>
+</html>
